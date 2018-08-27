@@ -5,7 +5,7 @@
       @close="isShow = false"
     />
     <headercomponent @open="isShow = true"/>
-    <ratailgroup/>
+    <uralauto/>
     <smartyard/>
     <gobambino/>
     <bomb/>
@@ -19,7 +19,7 @@
 
 <script>
 import headercomponent from './components/Header.vue'
-import ratailgroup from './components/RatailGroup.vue'
+import uralauto from './components/UralAuto.vue'
 import smartyard from './components/SmartYard.vue'
 import gobambino from './components/Gobambino.vue'
 import bomb from './components/Bomb.vue'
@@ -33,7 +33,7 @@ import modalcontent from './components/Modal.vue'
 export default {
   components: {
     headercomponent,
-    ratailgroup,
+    uralauto,
     smartyard,
     gobambino,
     bomb,
