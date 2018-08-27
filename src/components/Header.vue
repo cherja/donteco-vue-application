@@ -1,6 +1,10 @@
 <template>
   <div class="header-container">
     <div class="header-content">
+      <div @click="$emit('open')" class=header__front__call__hd>
+        <p>ЗАКАЗАТЬ ЗВОНОК</p>
+        <p class="line"></p>
+      </div>
       <div class=header__front__bigText>
         <div class=header__front__bigText__1><p>РАЗРАБОТКА</p></div>
         <div class=header__front__bigText__2><p>МОБИЛЬНЫХ</p></div>
@@ -11,10 +15,6 @@
       </div>
       <div class="line-break"></div>
       <div class="header_img">
-        <div @click="$emit('open')" class=header__front__call__hd>
-          <p>ЗАКАЗАТЬ ЗВОНОК</p>
-          <p class="line"></p>
-        </div>
         <transition name="bounce">
           <div class="img-animation"/>
         </transition>
@@ -38,6 +38,10 @@
 
 <style lang="scss">
 @import "../helpers";
+.header-container {
+  position: relative;
+}
+
 .header__front__call {
   display: none;
 }
@@ -50,7 +54,7 @@
     position: absolute;
     border-radius: 3px;
     bottom: 100px;
-    left: 0;
+    left: 50px;
     display: flex;
     align-items: center;
   }
@@ -67,8 +71,12 @@
   position: absolute;
   top: 174px;
   z-index: 3;
+  width: 100%;
    @include screen-max(1720px) {
-    top: 124px;
+    top: 110px;
+  }
+  @include screen-max(1220px) {
+    width: 110%;
   }
 }
 
@@ -76,9 +84,12 @@
   background: #25ced1;
   height: 115px;
   margin: 24.48px 0 0;
-   @include screen-max(1720px) {
-    height: 100px;
-  }
+    @include screen-max(1720px) {
+      height: 95px;
+    }
+    @include screen-max(1400px) {
+      height: 85px;
+    }
 }
 
 .header__front__bigText>div>p {
@@ -88,58 +99,52 @@
   letter-spacing: 5px;
   color: white;
   position: relative;
-  top: -8px;
+  top: 6px;
   left: 8px;
-   @include screen-max(1720px) {
-    font-size: 95px;
+  @include screen-max(1720px) {
+    font-size: 90px;
     top: 8px;
+  }
+  @include screen-max(1400px) {
+    font-size: 80px;
+  }
+  @include screen-max(1100px) {
+    font-size: 70px;
   }
 }
 
 .header__front__bigText__1 {
-  width: 530px;
-   @include screen-max(1720px) {
-    width: 440px;
-  }
+  width: 32%;
 }
 
 .header__front__bigText__2 {
-  width: 505px;
-   @include screen-max(1720px) {
-    width: 410px;
-  }
+     width: 30%;
 }
 
 .header__front__bigText__3 {
-  width: 560px;
-   @include screen-max(1720px) {
-    width: 470px;
-  }
+  width: 33%;
 }
 
 .header__front__call__hd {
+  font-weight: 900;
   z-index: 2;
   display: flex;
   align-items: center;
   position: absolute;
-  right: -28%;
-  bottom: 460px;
+  transform-origin: 0px 0px;
   transform: rotate(-90deg);
+  bottom: -28px;
+  right:-680px;
   font-size: 27px;
   color: #11449d;
   cursor: pointer;
-  @include screen-max(1720px) {
-    right: -36%;
-    bottom: 420px;
-  }
-  @include screen-max(1720px) {
-    right: -47%;
-    bottom: 425px;
+  @include screen-max(1100px) {
+    display: none;
   }
 }
 
 .line {
- width: 600px;
+ width: 500px;
  border: 1px solid #11449d;
 }
 
@@ -151,21 +156,21 @@
   display: flex;
   justify-content: space-between;
   margin-right: 50px;
+  margin-bottom: 50px;
   flex-wrap: wrap;
   position: relative;
+   @include screen-max(1100px) {
+    padding: 0 0 0 50px;
+    margin-right: 0px;
+  }
 }
-.header-content:last-child {
-  margin-bottom: 50px;
+
+.header_logo {
+  width: 20%;
 }
-// .line-break {
-//   width: 100%;
-// }
 
 .header_logo>img {
   width: 100%;
-   @include screen-max(1450px) {
-    width: 80%;
-  }
 }
 
 .header_logo {
@@ -174,17 +179,12 @@
 }
 
 .header_img {
-  width: 1400px;
-  height: 770px;
+  width: 75%;
+  height: 670px;
   overflow: hidden;
   position: relative;
-   @include screen-max(1720px) {
-    width: 1100px;
-    height: 550px;
-  }
-  @include screen-max(1450px) {
-    width: 850px;
-    height: 450px;
+  @include screen-max(1720px) {
+    height: 520px;
   }
 }
 
@@ -198,20 +198,6 @@
   left:0;
   right:0;
   bottom: 0;
-}
-
-@keyframes bounce-in {
-  0% {
-    transform: scale(1);
-  }
-
-   70% {
-    transform: scale(1.08);
-  }
-
-  100% {
-    transform: scale(1.09);
-  }
 }
 
 .header__front__contacts {
@@ -249,14 +235,34 @@
   font-size: 51px;
   line-height: 38px;
   font-weight: 900;
-
+   @include screen-max(1720px) {
+    font-size: 41px;
+    top: 20%;
+    left: -40%;
+  }
 }
 
 .header__background__bottomText>img {
   width: 370px;
   @include screen-max(1720px) {
-    width: 300px;
+    width: 280px;
+  }
+  @include screen-max(1720px) {
+    width: 250px;
   }
 }
 
+@keyframes bounce-in {
+  0% {
+    transform: scale(1);
+  }
+
+   70% {
+    transform: scale(1.08);
+  }
+
+  100% {
+    transform: scale(1.09);
+  }
+}
 </style>
