@@ -1,13 +1,13 @@
 <template>
   <div class="ural-auto-block container">
-    <div class="smart-yard-block__text">
-      <h2>SMART YARD</h2>
-      <h3>Удаленное управления СКУД системой</h3>
-      <p>Мобильные приложения для iOS и Android, позволяющие удаленно управлять СКУД-системой от компании ООО Бастион. Никогда еще комплексная защита частного домовладения не была такой удобной и информативной</p>
+    <div class="ural-auto-block__text">
+      <h2>URAL AUTO</h2>
+      <h3>Мобильный магазин</h3>
+      <p>Разработка мобильного магазина в виде мобильного приложения для iOS и Android для крупнейшего производителя автомобильной акустики в России</p>
     </div>
-    <div class="smart-yard-block__img">
-      <div class="smart-yard-block__img-mobile smart-yard-block__img-yard-one"></div>
-      <div class="smart-yard-block__img-mobile smart-yard-block__img-yard-two"></div>
+    <div class="ural-auto-block__img">
+      <div class="ural-auto-block__img-mobile ural-auto-block__img-ural-one"></div>
+      <div class="ural-auto-block__img-mobile ural-auto-block__img-ural-two"></div>
     </div>
   </div>
 </template>
@@ -15,31 +15,32 @@
 <style lang="scss">
 @import "../helpers";
 
-.ural-auto-block {
-  background-color: red;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 100px 0;
-   @include screen-md {
-    justify-content: flex-start;
-   }
-   @include screen-xs {
-    display: block;
-    margin: 50px 0;
+.ural-auto-block.container {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  @include screen-md {
+    padding-top: 50px;
+    padding-bottom: 50px;
   }
 }
 
-.smart-yard-block__text{
-  @include screen-xs {
-     margin: auto;
-    width: 310px;
+.ural-auto-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e31e3a;
+
+  @include screen-md {
+    justify-content: flex-start;
+  }
+   @include screen-xs {
+    display: block;
   }
   h2 {
     font-family: "BBB";
     font-weight: 900;
     font-size: 78px;
-    color: #0039b4;
+    color: #ffffff;
     @include screen-max(1850px) {
       font-size: 62px;
     }
@@ -54,6 +55,7 @@
   }
 
   h3 {
+    color: #ffffff;
     font-family: "SSP";
     font-size: 43px;
     font-weight: 100;
@@ -73,6 +75,8 @@
   }
 
   p {
+    color: #ffffff;
+    font-family: "SSP";
     margin-top: 80px;
     font-size: 23px;
     font-weight: 100;
@@ -97,7 +101,14 @@
   }
 }
 
-.smart-yard-block__img {
+.ural-auto-block__text {
+  @include screen-xs {
+    width: 320px;
+    margin: auto;
+  }
+}
+
+.ural-auto-block__img {
   display: flex;
   margin-left: 20px;
   @include screen-xs {
@@ -106,7 +117,7 @@
   }
 }
 
-.smart-yard-block__img-mobile {
+.ural-auto-block__img-mobile {
   width: 255px;
   height: 521px;
   background-position: center center;
@@ -116,24 +127,35 @@
       width: 181px;
       height: 380px;
     }
+
+    @include screen-md {
+       width: 131px;
+       height: 280px;
+     }
+
+     @include screen-sm{
+       width: 100px;
+       height: 230px;
+     }
   @include screen-xs {
     width: 181px;
     height: 210px;
   }
 }
 
-.smart-yard-block__img-yard-one {
-    background-image: url(../assets/images/smartyardone.png);
+.ural-auto-block__img-ural-one {
+    background-image: url(../assets/images/ural_smart_one.png);
       @include screen-sm {
       margin-right: 20px;
     }
 }
 
-.smart-yard-block__img-yard-two {
+.ural-auto-block__img-ural-two {
   margin: 50px 50px 0 50px;
-    background-image: url(../assets/images/smartyardtwo.png);
+    background-image: url(../assets/images/ural_smart_two.png);
+
      @include screen-md {
-       display: none;
+       margin: 50px 10px 0 20px;
      }
 
      @include screen-xs {

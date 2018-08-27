@@ -102,4 +102,25 @@ export default {
     padding: 0px;
   }
 }
+
+.container-center {
+  margin:auto;
+  padding: 0 320px;
+
+   @include screen-max(1600px) {
+      padding: 0 200px;
+    }
+
+   @include screen-max(1400px) {
+      padding: 0 100px;
+    }
+
+    @include screen-md {
+     padding: 0 50px;
+    }
+
+    @include screen-xs {
+    padding: 0px;
+  }
+}
 </style>

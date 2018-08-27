@@ -1,5 +1,5 @@
 <template>
-  <div class="footer-block container">
+  <div class="footer-block container-center">
     <div class="footer-block-content">
       <div class="footer-block-logo">
         <div class="footer-block-logo__img"/>
@@ -28,7 +28,7 @@
     font-weight: 600;
   }
   .footer-block-logo__img {
-    margin: 0 5px 0 10px;
+    margin-right: 5px;
     width: 28px;
     height: 28px;
     background-position: center center;
@@ -44,11 +44,14 @@
     color: #ffffff;
     font-family: "SSP";
     text-decoration: none;
-    margin: 0 7px;
+    margin-left: 7px;
     }
   p {
     font-family: "SSP";
-    margin: 0 25px;
+    margin-left: 50px;
+    @include screen-max(450px) {
+      margin-left: 0px;
+    }
   }
   @include screen-sm {
      display: block;
@@ -62,9 +65,15 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 30px 0 50px 0;
+  padding: 35px 0 60px 0;
+  @include screen-lg {
+     padding: 25px 0 40px 0;
+  }
   @include screen-sm {
      padding: 20px 0 30px 0;
+  }
+  @include screen-xs {
+     padding: 20px 10px 30px 10px;
   }
   @include screen-max(450px) {
       flex-direction: column;

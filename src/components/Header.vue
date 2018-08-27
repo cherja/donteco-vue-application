@@ -27,7 +27,7 @@
 @import "../helpers";
 
 .header-container {
-  width: 1800px;
+  max-width: 1680px;
   margin: auto;
 }
 
@@ -42,14 +42,14 @@
 }
 
 .header_img {
-  width: 800px;
-  height: 400px;
+  width: 1300px;
+  height: 770px;
   overflow: hidden;
   position: relative;
 }
 
 .img-animation {
-  background-image: url(../assets/images/companystaff.png);
+  background-image: url(../assets/images/header_main.png);
   position: absolute;
   animation: bounce-in 4s linear forwards;
   background-position: center center;
@@ -70,7 +70,7 @@
   }
 
   100% {
-    transform: scale(1.1);
+    transform: scale(1.09);
   }
 }
 
@@ -86,6 +86,7 @@
 
 .header__background__bottomText {
   position: relative;
+  margin-right: 20px;
 }
 
 .header__background__bottomText>p {

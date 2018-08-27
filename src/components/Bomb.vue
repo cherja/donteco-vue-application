@@ -86,6 +86,7 @@
   }
 
   p {
+    font-family: "SSP";
     margin-top: 80px;
     font-size: 23px;
     font-weight: 100;

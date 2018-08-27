@@ -1,5 +1,6 @@
 <template>
-  <div class="form-layout-block container">
+  <div class="form-layout-block">
+    <div class="container-center">
     <div class="form-layout-block__content">
     <div class="form-layout-block__text">
       <h3>Остались вопросы?<br>
@@ -13,6 +14,7 @@
       <input type="tel" placeholder="Телефон">
       <textarea placeholder="Введите сообщение"></textarea>
       <input @click="submitForm" type = "submit" value = "Отправить">
+    </div>
     </div>
     </div>
   </div>
@@ -45,7 +47,6 @@ export default {
 <style lang="scss">
 @import "../helpers";
 .form-layout-block {
-  width: 100%;
   background: linear-gradient(to right, #9037ed, #bd65f4);
   color: white;
   font-family: "SSP";
@@ -66,7 +67,8 @@ export default {
 }
 .form-layout-block__content {
   display: flex;
-  padding: 150px 0;
+  padding: 120px 0;
+  justify-content: space-between;
    @include screen-max(1400px) {
       padding: 80px 0;
     }

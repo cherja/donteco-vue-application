@@ -63,6 +63,7 @@
   }
 
   p {
+    font-family: "SSP";
     color: #ffffff;
     margin-top: 80px;
     font-size: 23px;
