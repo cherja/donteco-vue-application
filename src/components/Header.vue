@@ -13,17 +13,17 @@
       <div class="header_logo">
         <img src=../assets/images/header__logo.png>
       </div>
-      <div class="line-break"></div>
+      <div class="razriv"></div>
       <div class="header_img">
         <transition name="bounce">
           <div class="img-animation"/>
         </transition>
       </div>
     </div>
-    <div @click="$emit('open')" class=header__front__call>
-      <p>Заказать звонок</p>
-    </div>
-    <div class="header-content">
+    <div class="header-content colu">
+      <div @click="$emit('open')" class=header__front__call>
+        <p>Заказать звонок</p>
+      </div>
       <div class="header__front__contacts">
         <p>Москва <a href="tel: +74953746795">8(495)374-67-95</a></p>
         <p>Ростов-на-Дону <a href="tel: +78633200167">8(863)320-01-67</a></p>
@@ -41,6 +41,11 @@
 .header-container {
   position: relative;
 }
+.colu {
+  @include screen-max(1100px) {
+  flex-direction: column-reverse;
+  }
+}
 
 .header__front__call {
   display: none;
@@ -50,21 +55,25 @@
   @include screen-max(1100px) {
     width: 31%;
     background: #11449d;
-    height: 38px;
-    position: absolute;
+    height: 48px;
     border-radius: 3px;
-    bottom: 100px;
-    left: 50px;
     display: flex;
-    align-items: center;
+    @include screen-max(880px) {
+      width: 51%;
+    }
   }
 }
 .header__front__call>p {
-  text-align: center;
+  display:flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   color: white;
   font-size: 2.8vw;
   margin: 0;
+  @include screen-max(880px) {
+      font-size: 4.8vw;
+    }
 }
 
 .header__front__bigText {
@@ -78,6 +87,15 @@
   @include screen-max(1220px) {
     width: 110%;
   }
+   @include screen-max(1220px) {
+    top: 50%;
+  }
+  @include screen-max(880px) {
+    top: 65%;
+  }
+    @include screen-max(880px) {
+      font-size: 60px;
+    }
 }
 
 .header__front__bigText>div {
@@ -89,6 +107,12 @@
     }
     @include screen-max(1400px) {
       height: 85px;
+    }
+    @include screen-max(880px) {
+      height: 75px;
+    }
+    @include screen-max(410px) {
+      height: 70px;
     }
 }
 
@@ -111,18 +135,39 @@
   @include screen-max(1100px) {
     font-size: 70px;
   }
+  @include screen-max(410px) {
+      font-size: 60px
+    }
 }
 
 .header__front__bigText__1 {
   width: 32%;
+  @include screen-max(960px) {
+      width:350px;
+    }
+    @include screen-max(410px) {
+      width:300px;
+    }
 }
 
 .header__front__bigText__2 {
      width: 30%;
+     @include screen-max(960px) {
+      width:320px;
+    }
+    @include screen-max(410px) {
+      width:290px;
+    }
 }
 
 .header__front__bigText__3 {
   width: 33%;
+  @include screen-max(960px) {
+      width:350px;
+    }
+    @include screen-max(410px) {
+      width:310px;
+    }
 }
 
 .header__front__call__hd {
@@ -140,6 +185,12 @@
   cursor: pointer;
   @include screen-max(1100px) {
     display: none;
+  }
+}
+
+.razriv {
+   @include screen-max(1100px) {
+    width:100%;
   }
 }
 
@@ -163,19 +214,27 @@
     padding: 0 0 0 50px;
     margin-right: 0px;
   }
+  @include screen-max(410px) {
+    padding: 0 0 0 10px;
+  }
 }
 
 .header_logo {
   width: 20%;
+  margin-top: 40px;
+  @include screen-max(880px) {
+    width: 30%;
+  }
+  @include screen-max(880px) {
+    width: 40%;
+  }
+  @include screen-max(410px) {
+    width: 50%;
+  }
 }
 
 .header_logo>img {
   width: 100%;
-}
-
-.header_logo {
-  position: absolute;
-  top: 40px;
 }
 
 .header_img {
@@ -185,6 +244,17 @@
   position: relative;
   @include screen-max(1720px) {
     height: 520px;
+  }
+
+   @include screen-max(1400px) {
+    height: 450px;
+  }
+  @include screen-max(1100px) {
+    margin: 30px 0 80px 20px;
+    width: 100%;
+  }
+  @include screen-max(880px) {
+    margin: 30px 0 180px 20px;
   }
 }
 
@@ -203,6 +273,12 @@
 .header__front__contacts {
   color: #11449d;
   align-self: flex-end;
+  @include screen-max(1100px) {
+    align-self: auto;
+  }
+  @include screen-max(1100px) {
+    margin: 40px 0;
+  }
   p, a {
     font-size: 23px;
      @include screen-max(1850px) {
@@ -213,6 +289,9 @@
     }
     @include screen-lg {
       font-size: 16px;
+    }
+    @include screen-max(1100px) {
+     font-size: 23px;
     }
   }
   a {
@@ -240,6 +319,11 @@
     top: 20%;
     left: -40%;
   }
+   @include screen-max(1100px) {
+    font-size: 31px;
+    left: 0px;
+    top: 15%;
+  }
 }
 
 .header__background__bottomText>img {
@@ -249,6 +333,9 @@
   }
   @include screen-max(1720px) {
     width: 250px;
+  }
+  @include screen-max(1110px) {
+    margin-left: 90px;
   }
 }
 
